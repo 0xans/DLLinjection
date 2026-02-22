@@ -57,9 +57,6 @@ macro_rules! isnull {
 fn injection(pid: u32, dllpath: String) -> u8 {
     unsafe {
         let mut tid: DWORD = 0;
-
-        // /*-----[DLL path]-----*/
-        // let dllpath = CString::new(r"C:\\0xans\\Dev\\Rust\\fuckdll\\target\\x86_64-pc-windows-gnu\\release\\fuckdll.dll").unwrap();
         
         /*-----[Open the target process with RWX]-----*/
         let hprocess = OpenProcess(PROCESS_ALL_ACCESS, 0, pid);
